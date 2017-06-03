@@ -14,11 +14,11 @@ html, body {
 }
 
 html{
-  background-color: $black;
+  background-color: $white;
 
   body {
-    background-color: $black;
-    color: $white;
+    background-color: $white;
+    color: $black;
   }
 }
 
@@ -43,18 +43,26 @@ h1, h2, h3, h4, h5, h6 {
 //   font-family: $josefin;
 //   @include rem-fallback(padding-bottom, 1.5);
 }
-//
-// h1 {
-//   font-size: 6.5em;
-//   font-weight: 300;
-//   text-transform: lowercase;
-//   line-height: 1;
-//
-//   @include mobile {
-//     font-size: 3.5em;
-//   }
-// }
-//
+
+header {
+  background: #feffff;
+  h1 {
+    color: #222222;
+    // font-size: 64px;
+    padding: 50px 0;
+    font-size: 72px;
+
+    font-family: $montserrat;
+    // font-family: $elite;
+    border: 1px solid black;
+    border-top: 0;
+  }
+  .navbar {
+    background: #feffff;
+    border: 0;
+  }
+}
+
 // h2 {
 //   font-size: 3em;
 //   letter-spacing: 5px;
@@ -69,14 +77,67 @@ h1, h2, h3, h4, h5, h6 {
 //   margin: 0;
 // }
 //
-// a, i {
-//   transition: all 0.3s ease;
-//   cursor: pointer;
-//   &:visited,
-//   &:focus,
-//   &:hover {
-//     text-decoration:none;
-//   }
-// }
+a, i {
+  transition: all 0.3s ease;
+  color: $black;
+  cursor: pointer;
+
+  &:visited,
+  &:focus,
+  &:hover {
+    text-decoration:none;
+  }
+
+  &:hover {
+    color: $red;
+  }
+
+  &:active {
+    color: darken($red, 10);
+  }
+}
 
 .navbar { margin: 0; }
+
+.social {
+  .col {
+    padding: 50px 0;
+    a {
+      // border-bottom: 0;
+      // border-top: 0;
+      font-size: 36px;
+    }
+  }
+}
+
+.bx-wrapper {
+  border: 0;
+  margin: 0;
+  box-shadow: 0 0;
+
+  .bx-prev, .bx-next {
+    height: 125px!important;
+    width: 75px!important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    top: 45%!important;
+  }
+  .bx-prev {
+    background: url(images/arrow-left.png);
+  }
+  .bx-next {
+    background: url(images/arrow-right.png) -43px 0 no-repeat;
+  }
+}
+
+.description {
+  p {
+    margin: 0;
+    font-family: $openSans;
+    font-size: 16px;
+    padding: 50px;
+    border: 1px solid $black;
+    border-bottom: 0;
+  }
+}
