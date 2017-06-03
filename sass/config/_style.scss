@@ -22,8 +22,10 @@ html{
   }
 }
 
-h1 {
-  text-align: center;
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+  color: $white;
 }
 
 .background {
@@ -32,80 +34,42 @@ h1 {
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;
-  // background-image: url('images/native-altar-on-stage.jpg');
-}
-//
-h1, h2, h3, h4, h5, h6 {
-  padding: 0;
-  margin: 0;
-  color: $white;
-//   line-height: 1.4;
-//   font-family: $josefin;
-//   @include rem-fallback(padding-bottom, 1.5);
 }
 
-header {
-  background: #feffff;
+#primary {
+  position: relative;
   h1 {
-    color: #222222;
-    // font-size: 64px;
-    padding: 50px 0;
-    font-size: 72px;
-
-    font-family: $montserrat;
-    // font-family: $elite;
-    border: 1px solid black;
-    border-top: 0;
-  }
-  .navbar {
-    background: #feffff;
-    border: 0;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-family: $elite;
   }
 }
 
-// h2 {
-//   font-size: 3em;
-//   letter-spacing: 5px;
-// }
-//
-// p {
-//   line-height: 1.4;
-//   font-size: 1.8em;
-//   font-family: $cmu;
-//   color: $black;
-//   letter-spacing: 1px;
-//   margin: 0;
-// }
-//
-a, i {
-  transition: all 0.3s ease;
-  color: $black;
-  cursor: pointer;
+.navbar {
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: 0;
+  .navbar-right { background: $white; }
 
-  &:visited,
-  &:focus,
-  &:hover {
-    text-decoration:none;
-  }
+  .navbar-toggle .icon-bar { background-color: $white; }
 
-  &:hover {
-    color: $red;
-  }
+  .nav > li > a {
+    font-size: 24px;
+    padding: 15px 30px!important;
+    color: $black;
 
-  &:active {
-    color: darken($red, 10);
-  }
-}
+    &:hover {
+      background: $red;
+      color: $white;
+    }
 
-.navbar { margin: 0; }
-
-.social {
-  .col {
-    padding: 50px 0;
-    a {
-      // border-bottom: 0;
-      // border-top: 0;
-      font-size: 36px;
+    &:active {
+      background: darken($red, 10);
+      color: $white;
     }
   }
 }
@@ -131,13 +95,38 @@ a, i {
   }
 }
 
-.description {
-  p {
-    margin: 0;
-    font-family: $openSans;
-    font-size: 16px;
-    padding: 50px;
-    border: 1px solid $black;
-    border-bottom: 0;
+#description {
+  position: absolute;
+  bottom: 10px;
+  max-width: 500px;
+  left: 20px;
+  color: #feffff;
+  font-size: 16px;
+  margin: 0;
+  @include mobile {
+    position: initial;
+    color: $black;
+    padding: 30px 10px;
+  }
+}
+
+#tour-dates {
+  position: absolute;
+  bottom: 10px;
+  right: 40px;
+  color: $white;
+  @include mobile {
+    position: initial;
+    color: $black;
+    padding: 30px 10px;
+    .header { color: $black; }
+  }
+
+  .header {
+    padding-bottom: 10px;
+  }
+
+  th, td {
+    padding: 5px 30px 5px 0;
   }
 }
