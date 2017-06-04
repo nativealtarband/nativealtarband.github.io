@@ -6,9 +6,11 @@ $(document).ready(function(){
   }
 
   $('.bxslider').bxSlider({
-    auto: false,
+    auto: true,
+    pause: 3500,
     infiniteLoop: true,
     pager: false,
+    controls: false,
     mode: 'fade',
     adaptiveHeight: false,
     adaptiveHeightSpeed: 500
