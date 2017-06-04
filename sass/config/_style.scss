@@ -14,9 +14,11 @@ html, body {
 }
 
 html{
+  height: 100%;
   background-color: $white;
 
   body {
+    min-height: 100%;
     background-color: $white;
     color: $black;
   }
@@ -36,13 +38,16 @@ h1, h2, h3, h4, h5, h6 {
   background-attachment: scroll;
 }
 
+.hidden-off-mobile {
+  @include aboveMobile { display: none; }
+}
+
 #primary {
   position: relative;
   h1 {
     position: absolute;
     top: 15px;
     left: 20px;
-    font-family: $elite;
   }
 }
 
@@ -53,13 +58,14 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100%;
   border: 0;
-  .navbar-right { background: $white; }
+  .navbar-right {
+    background: $white;
+  }
 
   .navbar-toggle .icon-bar { background-color: $white; }
 
   .nav > li > a {
     font-size: 24px;
-    padding: 15px 30px!important;
     color: $black;
 
     &:hover {
@@ -71,6 +77,16 @@ h1, h2, h3, h4, h5, h6 {
       background: darken($red, 10);
       color: $white;
     }
+
+    @include aboveMobile{
+      padding-left: 0;
+      padding-right: 0;
+    }
+    i {
+      width: 75px;
+      text-align: center;
+    }
+
   }
 }
 
@@ -88,47 +104,37 @@ h1, h2, h3, h4, h5, h6 {
     top: 45%!important;
   }
   .bx-prev {
-    background: url(images/arrow-left.png);
+    &, &:hover, &:focus, &:visited, &:active {
+      background: url(images/arrow-left.png) 20px -87px no-repeat;
+    }
   }
   .bx-next {
-    background: url(images/arrow-right.png) -43px 0 no-repeat;
-  }
-}
-
-#description {
-  position: absolute;
-  bottom: 10px;
-  max-width: 500px;
-  left: 20px;
-  color: #feffff;
-  font-size: 16px;
-  margin: 0;
-  @include mobile {
-    position: initial;
-    max-width: initial;
-    color: $black;
-    padding: 30px 10px;
-    border-bottom: 1px solid $black;
+    &, &:hover, &:focus, &:visited, &:active {
+      background: url(images/arrow-right.png) -64px -87px no-repeat;
+    }
   }
 }
 
 #tour-dates {
   position: absolute;
-  bottom: 10px;
-  right: 40px;
-  color: $white;
+  bottom: 0;
+  left: 0;
+  padding: 30px 40px;
+  background: $white;
+  color: $black;
+
   @include mobile {
     position: initial;
-    color: $black;
     padding: 30px 10px;
-    .header { color: $black; }
   }
 
   .header {
+    color: $black;
     padding-bottom: 10px;
   }
 
   th, td {
     padding: 5px 30px 5px 0;
+    &:last-child { padding-right: 0; }
   }
 }

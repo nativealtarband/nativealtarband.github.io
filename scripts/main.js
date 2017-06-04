@@ -7,9 +7,7 @@ $(document).ready(function(){
 
   $('.bxslider').bxSlider({
     auto: false,
-    // pause: 5000,
     infiniteLoop: true,
-    // speed: 500,
     pager: false,
     mode: 'fade',
     adaptiveHeight: false,
