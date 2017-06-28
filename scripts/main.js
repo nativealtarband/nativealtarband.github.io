@@ -18,7 +18,7 @@ $(document).ready(function(){
 
   fullscreen();
   $(window).resize(function() {
-    fullscreen();
+    if ($(window).width() > 767) { fullscreen(); }
   });
 
   function processData(allText) {
